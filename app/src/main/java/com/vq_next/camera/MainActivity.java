@@ -328,6 +328,10 @@ public class MainActivity extends AppCompatActivity {
                             fpstext.setText(text);
                         }
                     });
+                    if (frames == 60) {
+                        frames = 0;
+                        start_time = System.currentTimeMillis();
+                    }
                     Image.Plane[] planes = img.getPlanes();
                     try {
                         dataio.bitstream.write(planes[0].getBuffer());
